@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: api-devopsbr-com-cert
+  namespace: default
+spec:
+  secretName: api-devopsbr-com-tls
+  issuerRef:
+    name: letsencrypt-manual
+    kind: ClusterIssuer
+  commonName: api.devopsbr.com
+  dnsNames:
+    - api.devopsbr.com
+  duration: 2160h
+  renewBefore: 360h
